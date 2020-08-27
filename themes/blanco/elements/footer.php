@@ -1,7 +1,9 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
 
-<footer id="footer-theme">
+</div>
 
-</footer>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-<?php $this->inc('elements/footer_bottom.php');?>
+<?php Loader::element('footer_required'); ?>
+</body>
+</html>

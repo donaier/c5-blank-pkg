@@ -1,81 +1,31 @@
 <?php
+
 namespace Concrete\Package\Blanco\Theme\Blanco;
 
-use Concrete\Core\Page\Theme\Theme;
 
-class PageTheme extends Theme {
+use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
+use Concrete\Core\Page\Theme\Theme as Theme;
 
-  public function registerAssets()
-  {
-    $this->requireAsset('javascript', 'jquery');
-    $this->requireAsset('javascript', 'picturefill');
-    $this->requireAsset('javascript-conditional', 'html5-shiv');
-    $this->requireAsset('javascript-conditional', 'respond');
-  }
+defined('C5_EXECUTE') or die("Access Denied.");
 
-  protected $pThemeGridFrameworkHandle = 'bootstrap3';
+class PageTheme extends Theme implements ThemeProviderInterface
+{
+    protected $pThemeName = 'Blanco';
+    protected $pThemeDescription = 'A theme.';
+    protected $pThemeHandle = 'blanco';
+    protected $pThemeGridFrameworkHandle = 'bootstrap3';
 
-  public function getThemeName()
-  {
-    return t('C5 Blanco');
-  }
+    /**
+     *
+     * public function registerAssets() {
+     *    $this->providesAsset('css', 'bootstrap/*');
+     *    $this->providesAsset('css', 'blocks/form');
+     *    $this->requireAsset('javascript', 'jquery');
+     * }
+     */
 
-  public function getThemeDescription()
-  {
-    return t('extra für üch');
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeBlockClasses()
-  {
-    return [];
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeAreaClasses()
-  {
-    return [];
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeDefaultBlockTemplates()
-  {
-    return [];
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeResponsiveImageMap()
-  {
-      return [
-        'large' => '900px',
-        'medium' => '768px',
-        'small' => '0',
-      ];
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeEditorClasses()
-  {
-      return [];
-  }
-
-  /**
-   * @return array
-   */
-  public function getThemeAreaLayoutPresets()
-  {
-    $presets = [];
-
-    return $presets;
-  }
+    public function getThemeAreaLayoutPresets()
+    {
+        return [];
+    }
 }
